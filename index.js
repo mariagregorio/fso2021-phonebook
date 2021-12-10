@@ -56,8 +56,8 @@ app.get('/api/persons/:id', (req, res, next) => {
 app.post('/api/persons', (req, res, next) => {
   const body = req.body
   if(!body.name || !body.number) {
-    return res.status(400).json({ 
-      error: 'name or number missing' 
+    return res.status(400).json({
+      error: 'name or number missing'
     })
   }
 
@@ -119,7 +119,6 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
-// this has to be the last loaded middleware.
 app.use(errorHandler)
 
 const PORT = process.env.PORT || 3001

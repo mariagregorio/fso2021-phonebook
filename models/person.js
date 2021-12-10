@@ -24,7 +24,7 @@ const personSchema = new mongoose.Schema({
     minLength: 8
   }
 })
-personSchema.plugin(uniqueValidator);
+personSchema.plugin(uniqueValidator)
 
 personSchema.set('toJSON', {
   transform: (document, returnedObject) => {
